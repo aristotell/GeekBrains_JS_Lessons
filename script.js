@@ -1,9 +1,9 @@
     // Homework Nº1
 
-    var Tc = 44;
-    var Tf = ((9 / 5) * Tc + 32); // formula
-    console.log(Tf + ' °F');
-    alert(Tf + 'ºF');
+    var temperaturec = 44;
+    var temperaturef = ((9 / 5) * Tc + 32); // formula
+    console.log(temperaturef + ' °F');
+    alert(temperaturef + ' ºF');
 
     // Homework Nº2
 
