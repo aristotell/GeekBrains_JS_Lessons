@@ -1,3 +1,33 @@
+/*
+Homework Nº2 (1)
+
+1. Дан код:
+	var a = 1, b = 1, c, d;
+	c = ++a; alert(c); // 2 
+	d = b++; alert(d); // 1 ()
+	c = (2+ ++a); alert(c); // 5 () 
+	d = (2+ b++); alert(d); // 4 ()
+	alert(a); // 3 (Финальное значение переменной в даний момент)
+	alert(b); // 3 (Финальное значение переменной в даний момент)
+Почему код даёт именно такие результаты?
+
+a. Операция префикс-инкремента (++a) возвращает значение уже измененной переменной "a" в переменной "с".
+b. Операция пост-инкремента (b++) возвращает значение переменной "d" до выполнения инкремента "b".
+c. К "2" добавляем уже увеличеное на единицу значение "а" которое с 2 изменилось на 3.
+d. К "2" добавляем актуальное значение "b" а потом увеличеваем его на единицу.
+e. (Финальные значения переменних в даний момент)
+
+
+Homework Nº2 (2)
+
+2. Чему будет равен x в примере ниже?
+	var a = 2;
+	var x = 1 + (a *= 2);
+
+Значение х равен 5.
+А происходит следущее: 1 + (2 * 2)
+*/
+
 function Homework_3() {
     //----------------------------------------------------------------------------------------------------------------------
     // Homework Nº2 (3)
@@ -13,8 +43,6 @@ function Homework_3() {
     const max = 999;
 
     var getRndInteger = function(min, max) {
-        // let num = Math.floor(Math.random() * (max - min + 1)) + min;
-        // return num;
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
@@ -50,42 +78,44 @@ function Homework_4() {
     // Homework Nº2 (4)
     // 4. Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.
 
-    var a = +prompt('Введите чисело от 0 до 15')
-
-    switch (a) {
-
+    var randomize = function() {
+        let randomNum = Math.round(Math.random() * 15);
+        return randomNum;
+    };
+    var num = randomize();
+    switch (num) {
         case 0:
-            console.log(a++);
+            console.log(num++);
         case 1:
-            console.log(a++);
+            console.log(num++);
         case 2:
-            console.log(a++);
+            console.log(num++);
         case 3:
-            console.log(a++);
+            console.log(num++);
         case 4:
-            console.log(a++);
+            console.log(num++);
         case 5:
-            console.log(a++);
+            console.log(num++);
         case 6:
-            console.log(a++);
+            console.log(num++);
         case 7:
-            console.log(a++);
+            console.log(num++);
         case 8:
-            console.log(a++);
+            console.log(num++);
         case 9:
-            console.log(a++);
+            console.log(num++);
         case 10:
-            console.log(a++);
+            console.log(num++);
         case 11:
-            console.log(a++);
+            console.log(num++);
         case 12:
-            console.log(a++);
+            console.log(num++);
         case 13:
-            console.log(a++);
+            console.log(num++);
         case 14:
-            console.log(a++);
+            console.log(num++);
         case 15:
-            console.log(a++);
+            console.log(num++);
             break;
         default:
             alert('Вас попросили ввести чисело от 0 до 15');
@@ -139,12 +169,17 @@ function Homework_5() {
 
     var x = +prompt('Введите число "x"');
     var y = +prompt('Введите число "y"');
+    if (isNaN(x && y)) {
+        alert('Вас попросили ввести чисело!!! :(');
+        window.location.reload();
+    } else {
+        console.log('Расчетный результат вычисления ' + '(' + x + ' / ' + y + ') ' + '= ' + divide(x, y));
+        console.log('Расчетный результат вычисления ' + '(' + x + ' * ' + y + ') ' + '= ' + multiply(x, y));
+        console.log('Расчетный результат вычисления ' + '(' + x + ' + ' + y + ') ' + '= ' + add(x, y));
+        console.log('Расчетный результат вычисления ' + '(' + x + ' - ' + y + ') ' + '= ' + sub(x, y));
+    }
 
 
-    console.log('Расчетный результат вычисления ' + '(' + x + ' / ' + y + ') ' + '= ' + divide(x, y));
-    console.log('Расчетный результат вычисления ' + '(' + x + ' * ' + y + ') ' + '= ' + multiply(x, y));
-    console.log('Расчетный результат вычисления ' + '(' + x + ' + ' + y + ') ' + '= ' + add(x, y));
-    console.log('Расчетный результат вычисления ' + '(' + x + ' - ' + y + ') ' + '= ' + sub(x, y));
 
 }
 
@@ -203,7 +238,7 @@ function Homework_8() {
         if (isNaN(pow && val)) {
             alert('Вас попросили ввести чисело!!! :(');
             window.location.reload();
-        } else if((pow == '') || (val == '')){
+        } else if ((pow == '') || (val == '')) {
 
             alert('Не забыли ли вы ввести кое что!!! :(');
             window.location.reload();
