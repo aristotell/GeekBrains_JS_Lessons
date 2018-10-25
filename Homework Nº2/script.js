@@ -213,9 +213,7 @@ function Homework_8() {
             return (res);
         }
     }
-
-    var val1 = prompt('Напишите число')
-    var pow1 = prompt('Ввести степень')
+    var val1 = prompt('Напишите число');
+    var pow1 = prompt('Ввести степень');
     console.log(power(val1, pow1));
-
 }
