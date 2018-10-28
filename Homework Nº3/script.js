@@ -1,9 +1,9 @@
 // 1) С помощью цикла while вывести все простые числа в промежутке от 0 до 100
 
 function homework_1() {
-var sn = 2;
-var isitSimple = true;
-var arr_Simple = [];
+    var sn = 2;
+    var isitSimple = true;
+    var arr_Simple = [];
 
     while (sn < 100) {
         for (var i = 2; i < sn; i++) {
@@ -62,7 +62,7 @@ function homework_2() {
             }
         }
     } while (i <= 10);
-document.getElementById("result").innerHTML = (num_even + ' </br> ' + num_odd)
+    document.getElementById("result").innerHTML = (num_even + ' </br> ' + num_odd)
 }
 
 
