@@ -123,7 +123,21 @@ function Homework_4() {
             break;
     }
 }
+/*
+var a = Math.floor(Math.random()*15);
 
+function check(a_) {
+    switch (a_) {
+        case 15:
+        alert('15');
+        break;
+        default;
+        alert(a_);
+        check(++a_);
+    }
+}
+alert(a);
+*/
 // mathFunctions
 var divide = function(x_, y_) {
     if (y_ != 0) {
@@ -253,7 +267,7 @@ function Homework_8() {
     var val1 = prompt('Напишите число');
     var pow1 = prompt('Ввести степень');
     console.log(power(val1, pow1));
-*/
+    */
     // Рекурсия!!!
     var power = function(val, pow) {
         if (isNaN(pow && val)) {
