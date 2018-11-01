@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* End of Eric Meyer's CSS Reset */
+
+html {
+    height: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+body {
+    font: 12px/18px Arial, sans-serif;
+    height: 100%;
+}
+
+.wrapper {
+    width: 100%;
+    min-width: 1000px;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+}
+
+
+/* Header
+-----------------------------------------------------------------------------*/
+.header {
+    height: auto;
+    background: #404040;
+}
+
+
+/* Middle
+-----------------------------------------------------------------------------*/
+.middle {
+    width: 100%;
+    padding: 0 0 100px;
+    position: relative;
+}
+
+.middle:after {
+    display: table;
+    clear: both;
+    content: '';
+}
+
+.container {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+}
+
+.content {
+    padding: 0 270px 0 270px;
+}
+
+.myButton {
+
+    box-shadow:inset 0px 1px 0px 0px #fff6af;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));
+
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23',GradientType=0);
+    background-color:#ffec64;
+
+    border-radius:6px;
+    border:1px solid #ffaa22;
+    display:inline-block;
+    cursor:pointer;
+    color:#333333;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffee66;
+}
+.myButton:hover {
+    background-color:#ffab23;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+/* Left Sidebar
+-----------------------------------------------------------------------------*/
+.left-sidebar {
+    float: left;
+    width: 250px;
+    margin-left: -100%;
+    position: relative;
+    background: #B5E3FF;
+}
+
+
+/* Right Sidebar
+-----------------------------------------------------------------------------*/
+.right-sidebar {
+    float: left;
+    width: 250px;
+    margin-left: -250px;
+    position: relative;
+    background: #FFACAA;
+}
+
+
+/* Footer
+-----------------------------------------------------------------------------*/
+.footer {
+    margin: -100px auto 0;
+    min-width: 1000px;
+    height: 100px;
+    background: #BFF08E;
+    position: relative;
+}
+
+/* 
+-----------------------------------------------------------------------------*/
+
+nav ul {
+    display: inline-flex;
+}
+
+/* ---------------------- Blueslate nav ---------------------- */
+#tabs25 {
+    position: relative;
+    display: block;
+    height: 42px;
+    font-size: 11px;
+    font-weight: bold;
+    background-color: #95AE50FF;
+    font-family: Arial, Verdana, Helvitica, sans-serif;
+    text-transform: uppercase;
+}
+
+#tabs25 ul {
+    margin: 0px;
+    padding: 0;
+    list-style-type: none;
+    width: auto;
+}
+
+#tabs25 ul li {
+    display: block;
+    float: left;
+    margin: 0 1px 0 0;
+}
+
+#tabs25 ul li a {
+    display: block;
+    float: left;
+    color: #D34D2B;
+    text-decoration: none;
+    padding: 14px 22px 0 22px;
+    height: 28px;
+}
+
+#tabs25 ul li a:hover,
+#tabs25 ul li a.current {
+    color: #838D71;
+}
+
+/* ---------------------- END Blueslate nav ---------------------- */
+
+/* ---------------------- Product Box ---------------------- */
+
+.product_box {
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+    width: 300px;
+    height: auto;
+    background-color: #389A33F3;
+}
+
+.prod_img {
+    padding: 5px;
+    display: block;
+    border: 2px solid black;
+
+}
+
+.prod_title {
+    display: block;
+    border: 2px solid black;
+}
+
+.prod_info {
+    display: block;
+    border: 2px solid black;
+}
+
+.add_button {
+    display: block;
+    border: 2px solid black;
+}
+
+/* ---------------------- End Product Box ---------------------- */
+
+.list {
+    display: block;
+}
+
+
