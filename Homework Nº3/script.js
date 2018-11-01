@@ -120,6 +120,7 @@ function homework_5() {
 
     var cart = [];
     var str = '';
+
     cart.push(arr_products[0], arr_product_names[0], arr_price[0]);
 
     str = cart.toString();
