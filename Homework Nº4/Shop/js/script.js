@@ -44,6 +44,7 @@ var loadProduct = function() {
 
         newParagraph.innerHTML = ('<div class="product_box"><div class="prod_img"><img src="' + loadedContent[i].img + '" alt=""></div><div class="prod_title">' + loadedContent[i].title + '</div><div class="prod_info">' + loadedContent[i].info + '</div><div class="price">' + loadedContent[i].price + ' p.' + '<div class="add_button"><span class="myButton" value="В Корзину" id="myButton_' + i + ' "onclick="put_tu_cart(this)">В Корзину</span></div></div>');
         fragment.appendChild(newParagraph);
+
     }
 
     document.querySelector('.content').appendChild(fragment);
@@ -53,15 +54,16 @@ var loadProduct = function() {
 window.addEventListener('load', loadProduct);
 
 
-
 function put_tu_cart(button) {
     var total_price = 0;
     let myButton;
     myButton = (button.id);
     let prod_number = (myButton[9] + '' + myButton[10]);
-    arr_cart.push(arr_buffer[prod_number]);
+
+    arr_cart.push(arr_buffer[prod_number*1]);
+
     var total_price = 0;
-        for (let i = 0; i < arr_cart.length; i++) {
+    for (let i = 0; i < arr_cart.length; i++) {
         total_price += (arr_cart[i].price * 1);
 
     }
