@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    * {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    img {
+        height: 45px;
+    }
+
+    .square_black {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        border: 1px solid white;
+        width: 49px;
+        height: 49px;
+        background-color: black;
+    }
+
+    .square_white {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        border: 1px solid black;
+        width: 49px;
+        height: 49px;
+        background-color: white;
+    }
+
+    #numbersLeft tr>div {
+        margin: 1px;
+    }
+
+    #numbersRight tr>div {
+        transform: rotate(180deg);
+        margin: 1px;
+    }
+
+    #letersUp {
+        transform: rotate(180deg);
+
+    }
+    </style>
+</head>
+
+<body>
+    <template id="myTemp">
+        <div class="square_black" id="square_black" value=""></div>
+        <div class="square_white" id="square_white" value=""></div>
+    </template>
+    <table>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>
+                    <div id="letersUp"></div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="numbersLeft"></div>
+                </td>
+                <td>
+                    <div id="myChessTable"></div>
+                </td>
+                <td>
+                    <div id="numbersRight"></div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div id="letersDown"></div>
+                </td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+
+</html>
+<!--
+<img src="img/king.png" alt="">
+<img src="img/queen.png" alt="">
+<img src="img/bishop.png" alt="">
+<img src="img/knight.png" alt="">
+<img src="img/rook.png" alt="">
+<img src="img/pown.png.png" alt="">
+
+<img src="img/king_w.png" alt="">
+<img src="img/queen_w.png" alt="">
+<img src="img/bishop_w.png" alt="">
+<img src="img/knight_w.png" alt="">
+<img src="img/rook_w.png" alt="">
+<img src="img/pown_w.png" alt="">
+ -->

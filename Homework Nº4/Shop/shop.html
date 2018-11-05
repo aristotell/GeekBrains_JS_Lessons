@@ -9,6 +9,23 @@
 </head>
 
 <body>
+    <template id="cart_case">
+        <div class="cart_box" id="#">
+            <table class="product_table">
+                <tr>
+                    <td id="Nº">Nº</td>
+                    <td id="rod_name">prod_name</td>
+                    <td id="sub_item">sub_item</td>
+                    <td id="prod_qty">prod_qty</td>
+                    <td id="add_item">add_item</td>
+                    <td id="remove_item">remove_item</td>
+                </tr>
+            </table>
+        </div>
+    </template>
+    <div id="cart_box" class="cart_box">
+        <div id="testcart"></div>
+    </div>
     <div class="wrapper">
         <header class="header">
             <nav class="nav">
@@ -27,7 +44,7 @@
             <div class="container">
                 <main class="content">
                     <div class="list">
-                    <!--    
+                        <!--    
                         <div class="product_box">
                             <div class="prod_img"><img src="" alt="">prod_img</div>
                                 <div class="prod_title">prod_title</div>
