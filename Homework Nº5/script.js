@@ -17,9 +17,9 @@ function chessTable() {
     let myTable = doc.createElement('table');
 
     for (let i = 0; i < 8; i++) {
-        let myRow = doc.createElement('tr');
+        let myRow = doc.createElement('div');
         for (let j = 0; j < 8; j++) {
-            let myCell = doc.createElement('td');
+            let myCell = doc.createElement('span');
             if (((myCell.innerText = i + j) % 2) == 0) {
                 myCell.innerHTML = '<div class="square_white" id="square' + (8 - i) + '.' + arr_leters[7 - j] + '"></div>';
             } else {
@@ -40,7 +40,7 @@ function letersUp() {
     let myTable = doc.createElement('table');
 
     for (let i = 0; i < 8; i++) {
-        let myRow = doc.createElement('td');
+        let myRow = doc.createElement('span');
         myRow.innerHTML = '<div class="square_white" id="letersUp">' + arr_leters[i] + '</div>';
         fragment.appendChild(myRow);
     }
@@ -55,8 +55,8 @@ function letersDown() {
     let myTable = doc.createElement('table');
 
     for (let i = 0; i < 8; i++) {
-        let myRow = doc.createElement('td');
-        myRow.innerHTML = '<div class="square_white" id="letersDown">' + arr_leters[i] + '</div>';
+        let myRow = doc.createElement('span');
+        myRow.innerHTML = '<div class="square_white" id="letersDown">' + arr_leters[7-i] + '</div>';
         fragment.appendChild(myRow);
     }
 
@@ -70,7 +70,7 @@ function numbersLeft() {
     let myTable = doc.createElement('table');
 
     for (let i = 0; i < 8; i++) {
-        let myRow = doc.createElement('tr');
+        let myRow = doc.createElement('div');
         myRow.innerHTML = '<div class="square_white" id="numbersLeft">' + (8 - i) + '</div>';
         fragment.appendChild(myRow);
     }
@@ -85,7 +85,7 @@ function numbersRight() {
     let myTable = doc.createElement('table');
 
     for (let i = 0; i < 8; i++) {
-        let myRow = doc.createElement('tr');
+        let myRow = doc.createElement('div');
         myRow.innerHTML = '<div class="square_white" id="numbersRight">' + (8 - i) + '</div>';
         fragment.appendChild(myRow);
     }
