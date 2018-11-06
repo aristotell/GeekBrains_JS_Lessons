@@ -14,7 +14,8 @@ var arr_leters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 function chessTable() {
 
     let fragment = doc.createDocumentFragment();
-    let myTable = doc.createElement('table');
+    let myTable = doc.createElement('div');
+    myTable.id = 'myChessDiv';
 
     for (let i = 0; i < 8; i++) {
         let myRow = doc.createElement('div');
@@ -37,11 +38,11 @@ function chessTable() {
 function letersUp() {
 
     let fragment = doc.createDocumentFragment();
-    let myTable = doc.createElement('table');
+    let myTable = doc.createElement('div');
 
     for (let i = 0; i < 8; i++) {
         let myRow = doc.createElement('span');
-        myRow.innerHTML = '<div class="square_white" id="letersUp">' + arr_leters[i] + '</div>';
+        myRow.innerHTML = '<div class="square_white" id="letersUp">' + arr_leters[7 - i] + '</div>';
         fragment.appendChild(myRow);
     }
 
@@ -52,11 +53,11 @@ function letersUp() {
 function letersDown() {
 
     let fragment = doc.createDocumentFragment();
-    let myTable = doc.createElement('table');
+    let myTable = doc.createElement('div');
 
     for (let i = 0; i < 8; i++) {
         let myRow = doc.createElement('span');
-        myRow.innerHTML = '<div class="square_white" id="letersDown">' + arr_leters[7-i] + '</div>';
+        myRow.innerHTML = '<div class="square_white" id="letersDown">' + arr_leters[7 - i] + '</div>';
         fragment.appendChild(myRow);
     }
 
@@ -67,7 +68,7 @@ function letersDown() {
 function numbersLeft() {
 
     let fragment = doc.createDocumentFragment();
-    let myTable = doc.createElement('table');
+    let myTable = doc.createElement('span');
 
     for (let i = 0; i < 8; i++) {
         let myRow = doc.createElement('div');
@@ -82,7 +83,7 @@ function numbersLeft() {
 function numbersRight() {
 
     let fragment = doc.createDocumentFragment();
-    let myTable = doc.createElement('table');
+    let myTable = doc.createElement('span');
 
     for (let i = 0; i < 8; i++) {
         let myRow = doc.createElement('div');
