@@ -39,7 +39,7 @@ function letersUp() {
 
     let fragment = doc.createDocumentFragment();
     let myTable = doc.createElement('div');
-
+    myTable.className = 'leters';
     for (let i = 0; i < 8; i++) {
         let myRow = doc.createElement('span');
         myRow.innerHTML = '<div class="square_white" id="letersUp">' + arr_leters[7 - i] + '</div>';
@@ -54,6 +54,7 @@ function letersDown() {
 
     let fragment = doc.createDocumentFragment();
     let myTable = doc.createElement('div');
+    myTable.className = 'leters';
 
     for (let i = 0; i < 8; i++) {
         let myRow = doc.createElement('span');
@@ -69,7 +70,7 @@ function numbersLeft() {
 
     let fragment = doc.createDocumentFragment();
     let myTable = doc.createElement('span');
-
+    myTable.className = 'leters';
     for (let i = 0; i < 8; i++) {
         let myRow = doc.createElement('div');
         myRow.innerHTML = '<div class="square_white" id="numbersLeft">' + (8 - i) + '</div>';
@@ -84,7 +85,7 @@ function numbersRight() {
 
     let fragment = doc.createDocumentFragment();
     let myTable = doc.createElement('span');
-
+    myTable.className = 'leters';
     for (let i = 0; i < 8; i++) {
         let myRow = doc.createElement('div');
         myRow.innerHTML = '<div class="square_white" id="numbersRight">' + (8 - i) + '</div>';
