@@ -76,7 +76,7 @@
     }
 
 
-    var scroll_Right = function s(evt) {
+    var scroll_Right = function (evt) {
         if (evt.toElement.parentNode.id == 'scroll_Right') {
             let xScrollWidth = doc.getElementById('scrolling').scrollWidth;
             console.log(xScrollWidth);
