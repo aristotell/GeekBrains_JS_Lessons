@@ -57,6 +57,13 @@ window.addEventListener('load', loadProduct);
 
 var Nº = 0;
 
+var myProdObj = {
+    name:;
+    num_of_prod:;
+    price:;
+}
+
+
 function put_tu_cart(button) {
     let fragment = doc.createDocumentFragment();
     let sp1 = doc.createElement('tr');
