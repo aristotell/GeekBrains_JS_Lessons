@@ -79,6 +79,8 @@ var mouseActions = function(evt) {
     } else if (evt.target.id == 'color') {
         renderSystem(system, 'currentColor', switchColor(evt.target));
         //console.log(evt);
+    } else if (evt.target.id == 'downloadImage') {
+        downloadImage();
     };
 
 };
@@ -106,7 +108,7 @@ var drawLines = function(evt) {
         //ctx.fillRect (xCoord.innerText , yCoord.innerText, system.brushSize, system.brushSize);
         ctx.arc(xCoord.innerText, yCoord.innerText, system.brushSize, 0, Math.PI * 2, false);
         ctx.fill();
-        ctx.stroke();
+        //ctx.stroke();
     }
 };
 
@@ -126,7 +128,7 @@ var drawRect = function(evt) {
 
     canvas.onmouseup = function(evt) {
         var myclientX_2 = evt.offsetX; // Берём координаты при отпускании кнопки мыши
-        var myclientY_2 = evt.offsetY; 
+        var myclientY_2 = evt.offsetY;
 
         ctx.beginPath();
         ctx.strokeStyle = system.currentColor;
@@ -142,6 +144,22 @@ var endDraw = function(evt) {
     doc.getElementById('currentTool').innerText = system.currentTool;
     //console.log(doc.getElementById('currentTool'));
 
+};
+
+// Генерирую ссылку на картинку для скачивания
+
+function downloadImage() {
+
+    var image = canvas.toDataURL();
+    var aLink = document.createElement('a');
+    var evt = document.createEvent("HTMLEvents");
+    evt.initEvent("click");
+    aLink.download = 'image.png';
+    aLink.href = image;
+    aLink.innerText = 'Download'
+    aLink.dispatchEvent(evt);
+    //console.log(aLink);
+    doc.getElementById('myLink').appendChild(aLink);
 };
 
 canvas.addEventListener('mousemove', getCoordinates);
