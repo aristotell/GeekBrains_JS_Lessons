@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    body {
+        min-width: 600px;
+    }
+
+    img {
+        margin: 1px;
+        height: 45px;
+    }
+    
+
+    .chess {
+        text-align: center;
+    }
+    #myChessTable {
+        margin: 0;
+    }
+
+    .square_black {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        width: 50px;
+        height: 50px;
+        background-color: grey;
+    }
+
+    .square_white {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        width: 50px;
+        height: 50px;
+        background-color: white;
+    }
+
+    #myChessDiv {
+        border: 1px solid black;
+        display: inline-block;
+
+    }
+
+    #letersDown {
+        display: auto;
+
+    }
+
+    #numbersLeft {
+        display: inline-block;
+
+    }
+
+    #numbersRight {
+        display: inline-block;
+
+    }
+
+    #letersUp {
+        display: auto;
+    }
+
+    .leters {}
+    </style>
+</head>
+
+<body>
+    <template id="myTemp">
+        <div class="square_black" id="square_black" value=""></div>
+        <div class="square_white" id="square_white" value=""></div>
+    </template>
+    <div id="chess">
+        <div id="letersUp"></div>
+        <span id="numbersLeft"></span>
+        <span id="myChessTable"></span>
+        <span id="numbersRight"></span>
+        <div id="letersDown"></div>
+        <script src="script.js"></script>
+    </div>
+</body>
+
+</html>
+<!--
+<img src="img/king.png" alt="">
+<img src="img/queen.png" alt="">
+<img src="img/bishop.png" alt="">
+<img src="img/knight.png" alt="">
+<img src="img/rook.png" alt="">
+<img src="img/pown.png.png" alt="">
+
+<img src="img/king_w.png" alt="">
+<img src="img/queen_w.png" alt="">
+<img src="img/bishop_w.png" alt="">
+<img src="img/knight_w.png" alt="">
+<img src="img/rook_w.png" alt="">
+<img src="img/pown_w.png" alt="">
+ -->
