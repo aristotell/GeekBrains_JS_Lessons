@@ -1,41 +1,135 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>AboBE ФОТОЖАБ</title>
-	<style>
-		#canv {
-			width: 1000px;
-			height: 800px;
-			border: 1px solid black
-		}
-	</style>
-</head>
-<body>
-	<div class="head"></div>
-	<div class="canv">
-		<canvas id="canv" width="1000" height="800"></canvas>
-	</div>
-	<div class="tools">
-		<div class="coordinates">
-			<p id="x"><b>x: </b> <span id="xCoord"></span></p>
-			<p id="y"><b>y: </b> <span id="yCoord"></span></p>
-			<p id="activeTool">Tool: <span id="currentTool"></span></p>
-			<p><button id="downloadImage">Generate a picture</button></p>
-			<p id="myLink"></p>
-			<br>
-			<button class="toolButton" id='brush'>Brush</button>
-			<button class="toolButton" id='notbrush'>Draft</button>
-			<button class="toolButton" id='notbrush2'>Rectangle</button>
-			<select id='sizeSelect'>
-				<option>5</option>
-				<option>10</option>
-				<option>15</option>
-				<option>20</option>
-			</select>
-			<input type="color" id="color">
-		</div>
-	</div>
 
-	<script src="js/app.js"></script>
+<head>
+    <title>AboBE ФОТОЖАБ</title>
+    <style>
+    body {
+        background-color: #777;
+    }
+
+    .continer {
+
+        text-align: center;
+    }
+
+    .canv {
+        margin: 0 auto;
+        padding-top: 200px;
+    }
+
+    .tools {
+        position: absolute;
+        top: 0;
+        z-index: 30;
+        width: 300px;
+        height: 1080px;
+        backface-visibility: hidden;
+    }
+
+    #canv {
+        background-color: #fff;
+        width: 1920px;
+        height: 1080px;
+        border: 1px solid black;
+    }
+
+    .toolButton {
+        width: 150px;
+        height: 150px;
+    }
+
+    #brush {
+        background-image: url(tools_icon/tool_1.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    #notbrush {
+        background-image: url(tools_icon/tool_3.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    #notbrush2 {
+        background-image: url(tools_icon/Rectange_icon.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    #line {
+        background-image: url(tools_icon/Line_tool.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    #color {
+        width: 150px;
+        height: 150px;
+    }
+
+    #downloadImage {
+        background-size: cover;
+        background-image: url(tools_icon/Download_icon.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 150px;
+        height: 150px;
+    }
+
+    #sizeSelect {
+        width: 150px;
+        height: 150px;
+    }
+
+    #activeTool {
+        border: 1px solid black;
+        width: 150px;
+        height: 150px;
+    }
+
+    #myLink {
+        border: 1px solid black;
+        width: 150px;
+        height: 150px;
+    }
+
+    #mytool {
+        border: 1px solid black;
+        width: 150px;
+        
+        height: 150px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="continer">
+        <div>
+            <div id="mytool">
+                <p id="activeTool">Tool:
+                    <span id="currentTool"></span>
+                    <span id="myLink"></span>
+                </p>
+            </div>
+            <span><button id="downloadImage"></button></span>
+            <span>
+                    <span id="toolbox">
+                        <button class="toolButton" id='brush'></button>
+                        <button class="toolButton" id='notbrush'></button>
+                        <button class="toolButton" id='notbrush2'></button>
+                        <button class="toolButton" id='line'></button>
+                    </span>
+            </span>
+            <span><input id="sizeSelect" type="range" min="1" max="100" value="50"></span>
+            <span><input type="color" id="color"></span>
+        </div>
+        <div class="canv">
+            <canvas id="canv" width="1920px" height="1080px"></canvas>
+        </div>
+        <span id="x"><b>x: </b> <span id="xCoord"></span></span>
+        <span id="y"><b>y: </b> <span id="yCoord"></span></span>
+        <script src="js/app.js"></script>
 </body>
+
 </html>

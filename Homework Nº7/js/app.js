@@ -1,13 +1,14 @@
 var doc = document;
 
-
 var size = doc.getElementById('sizeSelect');
 var newColor = doc.getElementById('color');
 var canvas = doc.getElementById('canv');
+var divTools = doc.getElementById('tools');
+
 var ctx = canvas.getContext('2d');
 var xCoord = doc.getElementById('xCoord');
 var yCoord = doc.getElementById('yCoord');
-var tools = ['brush', 'rectangle'];
+//var tools = ['brush', 'rectangle'];
 var activeTool = '';
 
 
@@ -18,6 +19,11 @@ var system = {
     currentTool: '',
     brushSize: size.value
 };
+
+var myEvt = function(evt) {
+    console.log(evt);
+}
+myEvt();
 
 var getCoordinates = function(evt) {
 
@@ -43,17 +49,29 @@ var renderSystem = function(obj, elem, action) {
     console.log('done!');
     console.log(obj);
     doc.getElementById('currentTool').innerText = system.currentTool;
-
 };
 
 
 var switchTool = function(button) {
     if (button.id == 'brush') {
+        canvas.style.cursor = "url('tools_icon/tool_1.png') 0 125, auto";
+        lineArrX = [xCoord];
+        lineArrY = [yCoord];
         return 'brush';
     } else if (button.id == 'notbrush') {
-        return 'Draft';
+        canvas.style.cursor = "url('tools_icon/tool_3.png') 0 100, auto";
+        lineArrX = [xCoord];
+        lineArrY = [yCoord];
+        return 'Eraser';
+        console.log('Eraser');
     } else if (button.id == 'notbrush2') {
+        canvas.style.cursor = "url('tools_icon/tool_1.png') 0 125, auto";
+        lineArrX = [xCoord];
+        lineArrY = [yCoord];
         return 'Rectangle';
+    } else if (button.id == 'line') {
+        canvas.style.cursor = "url('tools_icon/tool_1.png') 0 125, auto";
+        return 'line';
     }
 
 };
@@ -85,81 +103,108 @@ var mouseActions = function(evt) {
 
 };
 
-
-
-var startDraw = function(evt) {
-
-    system.currentColor = doc.getElementById('color').value; // Обновляет цвет.
-
-    if (system.currentTool == 'brush') {
-        drawLines(evt);
-    } else if (system.currentTool == 'Draft') {
-        drawClear(evt);
-    } else if (system.currentTool == 'Rectangle') {
-        drawRect(evt);
-    }
-};
-
-
 var drawLines = function(evt) {
     canvas.onmousemove = function(evt) {
         ctx.beginPath();
         ctx.fillStyle = system.currentColor;
-        //ctx.fillRect (xCoord.innerText , yCoord.innerText, system.brushSize, system.brushSize);
         ctx.arc(xCoord.innerText, yCoord.innerText, system.brushSize, 0, Math.PI * 2, false);
         ctx.fill();
-        //ctx.stroke();
+        ctx.closePath();
     }
 };
-
 
 var drawClear = function(evt) {
     canvas.onmousemove = function(evt) {
         ctx.beginPath();
         ctx.fillStyle = system.currentColor;
-        ctx.clearRect(xCoord.innerText, yCoord.innerText, system.brushSize, system.brushSize);
+        ctx.clearRect(xCoord.innerText - (system.brushSize / 2), yCoord.innerText - (system.brushSize / 2), system.brushSize, system.brushSize);
         ctx.stroke();
+        ctx.closePath();
     }
 };
 
 var drawRect = function(evt) {
-    var myclientX_1 = evt.offsetX; //Берём координаты при нажатии кнопки мыши
-    var myclientY_1 = evt.offsetY;
+
+    let myclientX_1 = evt.offsetX; //Берём координаты при нажатии кнопки мыши
+    let myclientY_1 = evt.offsetY;
 
     canvas.onmouseup = function(evt) {
-        var myclientX_2 = evt.offsetX; // Берём координаты при отпускании кнопки мыши
-        var myclientY_2 = evt.offsetY;
+
+        let myclientX_2 = evt.offsetX; // Берём координаты при отпускании кнопки мыши
+        let myclientY_2 = evt.offsetY;
 
         ctx.beginPath();
+        ctx.lineWidth = system.brushSize;
         ctx.strokeStyle = system.currentColor;
         ctx.strokeRect(myclientX_1, myclientY_1, myclientX_2 - myclientX_1, myclientY_2 - myclientY_1);
-        ctx.fill();
         ctx.stroke();
-
+        ctx.closePath();
+        canvas.onmouseup = null; // Заканчиваем событие.
     }
 };
+
+var drawLine = function(evt) {
+
+    let myclientX_1 = evt.offsetX; //Берём координаты при нажатии кнопки мыши
+    let myclientY_1 = evt.offsetY;
+
+    canvas.onmouseup = function(evt) {
+
+        let myclientX_2 = evt.offsetX; // Берём координаты при отпускании кнопки мыши
+        let myclientY_2 = evt.offsetY;
+
+        ctx.beginPath();
+        ctx.lineWidth = system.brushSize;
+        ctx.strokeStyle = system.currentColor;
+        ctx.lineCap = "round";
+        ctx.moveTo(myclientX_1, myclientY_1);
+        ctx.lineTo(myclientX_2, myclientY_2);
+        ctx.stroke();
+        canvas.onmouseup = null; // Заканчиваем событие.
+    }
+}
 
 var endDraw = function(evt) {
     canvas.onmousemove = null;
     doc.getElementById('currentTool').innerText = system.currentTool;
-    //console.log(doc.getElementById('currentTool'));
-
 };
 
 // Генерирую ссылку на картинку для скачивания
 
-function downloadImage() {
+var startDraw = function(evt) {
 
-    var image = canvas.toDataURL();
-    var aLink = document.createElement('a');
-    var evt = document.createEvent("HTMLEvents");
-    evt.initEvent("click");
+    system.currentColor = doc.getElementById('color').value; // Обновляет цвет.
+    console.log(system.currentTool + ' 1');
+    if (system.currentTool == 'brush') {
+        drawLines(evt);
+    } else if (system.currentTool == 'Eraser') {
+
+        drawClear(evt);
+    } else if (system.currentTool == 'Rectangle') {
+        drawRect(evt);
+    } else if (system.currentTool == 'line') {
+        drawLine(evt);
+    }
+};
+
+var downloadImage = function() {
+
+    let mylink1 = document.getElementById('myLink');
+    let aLink = document.createElement('a');
+    let image = canvas.toDataURL();
+    aLink.id = 'aLink';
     aLink.download = 'image.png';
     aLink.href = image;
-    aLink.innerText = 'Download'
-    aLink.dispatchEvent(evt);
-    //console.log(aLink);
-    doc.getElementById('myLink').appendChild(aLink);
+    aLink.innerText = 'Download';
+
+    if (typeof myLink.childNodes[0] == 'undefined') {
+        doc.getElementById('myLink').appendChild(aLink);
+    } else {
+        let el = doc.getElementById('aLink');
+        el.remove();
+        doc.getElementById('myLink').appendChild(aLink);
+    }
+
 };
 
 canvas.addEventListener('mousemove', getCoordinates);
